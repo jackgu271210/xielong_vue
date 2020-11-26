@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <common-header />
     <router-view />
+    <tab-bar v-show="$route.meta.showBottomTabBar" />
   </div>
 </template>
 
-<style lang="stylus">
+<script>
+  import CommonHeader from './components/CommonHeader'
+  import TabBar from './components/TabBar'
+  export default {
+    name: 'App',
+    components: {
+      CommonHeader,
+      TabBar
+    }
+  }
+</script>
+
+<style lang="stylus" scoped>
 #app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+  width 100%
+  height 100%
+  background-color #f5f5f5
+  position relative
 </style>
