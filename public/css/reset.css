@@ -31,6 +31,10 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
+a {
+  color: #666;
+  text-decoration: none;
+}
 ol, ul {
   list-style: none;
 }
@@ -50,4 +54,52 @@ table {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.container {
+  width: 94%;
+  margin: 0 auto;
+}
+.section {
+  padding: 20px 0;
+}
+h2, h3, h4 {
+  font-size: 16px;
+  color: #333;
+}
+p {
+  font-size: 13px;
+  line-height: 24px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+img {
+  width: 100%;
+}
+.button {
+  font-size: 13px;
+  width: 50%;
+  margin:20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.button .prev, .button .next, .button .more {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #d2d2d2;
+}
+.button .more {
+  width: 100px;
+}
+.button .prev, .button .next {
+  width: 40px;
+  color: #d2d2d2;
+}
+.button .prev, .button .more {
+  margin-right:10px ;
 }

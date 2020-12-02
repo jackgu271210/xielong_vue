@@ -12,13 +12,22 @@ import {
   Drawer,
   Menu,
   Submenu,
-  MenuItem
+  MenuItem,
+  Tabs,
+  TabPane
 } from 'element-ui';
 
 Vue.use(Drawer)
 Vue.use(Menu)
 Vue.use(Submenu)
 Vue.use(MenuItem)
+Vue.use(Tabs)
+Vue.use(TabPane)
+
+// 配置 vue-awesome-swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false;
 

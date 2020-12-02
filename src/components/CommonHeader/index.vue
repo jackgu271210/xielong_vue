@@ -123,6 +123,7 @@ export default {
     top: 0;
     z-index: 9999;
     padding: 0 20px;
+    box-sizing: border-box
     display: flex;
     justify-content: space-between;
     align-items: center;
