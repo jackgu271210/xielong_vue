@@ -1,30 +1,30 @@
 <template>
   <div class="section indexnews">
-    <div class="title">
-      -
-      <span>新闻资讯</span>
-      -
-    </div>
-    <swiper class="swiper" :options="swiperOption">
-      <swiper-slide
-        v-for="item in indexNewsList"
-        :key="item.index"
-        class="list"
-      >
-        <div class="pic">
-          <img :src="item.imgUrl" alt="">
-        </div>
-        <div class="content">
-          <div class="content_wrap">
-            <h3 class="title">{{item.title}}</h3>
-            <p class="desc">{{item.desc}}</p>
+    <div class="container">
+      <div class="title">
+        <h2>新闻资讯</h2>
+      </div>
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide
+          v-for="item in indexNewsList"
+          :key="item.index"
+          class="list"
+        >
+          <div class="pic">
+            <img :src="item.imgUrl" alt="">
           </div>
-        </div>
-      </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
-    <div class="button">
-      <a href="javascript:;" class="more">查看更多 ></a>
+          <div class="content">
+            <div class="content_wrap">
+              <h3 class="title">{{item.title}}</h3>
+              <p class="desc">{{item.desc}}</p>
+            </div>
+          </div>
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+      <div class="button">
+        <a href="javascript:;" class="more">查看更多 ></a>
+      </div>
     </div>
   </div>
 </template>
@@ -80,6 +80,6 @@ export default {
             -webkit-line-clamp 2
             -webkit-box-orient vertical
   .button
-    display block
+    width 25%
 
 </style>

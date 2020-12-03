@@ -40,6 +40,7 @@ export default {
         bottom 0
         display flex
         z-index 999
+        box-shadow 0 0 5px rgba(0,0,0,0.1)
         .tab_item
             display flex
             flex 1

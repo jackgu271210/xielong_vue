@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
+  font-size: 13px;
   line-height: 1;
 }
 a {
@@ -60,11 +61,37 @@ table {
   margin: 0 auto;
 }
 .section {
-  padding: 20px 0;
+  padding-top: 20px;
+}
+.section>.title>h2{
+  position: relative;
+}
+.section>.title>h2:before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background-color: #999;
+  position: absolute;
+  top: 46%;
+  left: 34%;
+}
+.section>.title>h2:after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background-color: #999;
+  position: absolute;
+  top: 46%;
+  right: 34%;
 }
 h2, h3, h4 {
-  font-size: 16px;
   color: #333;
+}
+h2 {
+  font-size: 18px;
+}
+h3, h4 {
+  font-size: 16px;
 }
 p {
   font-size: 13px;
@@ -81,8 +108,9 @@ img {
 }
 .button {
   font-size: 13px;
-  width: 50%;
-  margin:20px auto;
+  width: 25%;
+  margin:0 auto;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }

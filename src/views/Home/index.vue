@@ -34,11 +34,19 @@
       <div class="pic">
         <img src="http://www.bt-fiber.com/images/111.jpg" alt="">
       </div>
-      <div class="button">
-        <a href="javascript:;">
-          店铺预览
-          <i class="iconfont"></i>
-        </a>
+      <div class="content">
+        <div class="content_wrap">
+          <h3>西海科技门店信息</h3>
+          <p>
+            公司坐落于江苏省无锡市，目前共有分部10家，欢迎广大客户前来莅临！
+          </p>
+          <div class="button">
+            <a href="javascript:;" class="more">
+              店铺预览
+              <i class="iconfont">&#xe78e;</i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -85,7 +93,28 @@ export default {
       ],
       indexProList: [
         {
-          "title": "电子产品密封件类",
+          "title": "电子产品",
+          "list": [
+            {
+              "imgUrl":"http://www.seacorubber.com/ueditor/asp/upload/image/20201123/16061185517158079.jpg",
+              "title":"电子密封橡胶制品"
+            },
+            {
+              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231631235611.jpg",
+              "title":"电子密封橡胶制品"
+            },
+            {
+              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231635642774.jpg",
+              "title":"电子密封橡胶制品"
+            },
+            {
+              "imgUrl":"http://www.seacorubber.com/ueditor/asp/upload/image/20201123/16061186645127393.jpg",
+              "title":"电子密封橡胶制品"
+            }
+          ]
+        },
+        {
+          "title": "电脑",
           "list": [
             {
               "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
@@ -106,7 +135,7 @@ export default {
           ]
         },
         {
-          "title": "电子产品密封件类",
+          "title": "电动工具",
           "list": [
             {
               "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
@@ -127,66 +156,13 @@ export default {
           ]
         },
         {
-          "title": "电子产品密封件类",
+          "title": "医疗器材",
           "list": [
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            }
           ]
         },
         {
-          "title": "电子产品密封件类",
+          "title": "汽车",
           "list": [
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            }
-          ]
-        },
-        {
-          "title": "电子产品密封件类",
-          "list": [
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            },
-            {
-              "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",
-              "title":"电子密封橡胶制品"
-            }
           ]
         }
       ],
@@ -241,7 +217,18 @@ export default {
           text-align center
           background-image linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6)) 
 .indexaddr
-  .pic
-    img
+  .content
+    height 200px
+    text-align: center;
+    background-color #f8f8f8
+    display flex
+    justify-content center
+    align-items center
+    .content_wrap
+      width 90%
+      .button
+        width 28%
+      h3
+        margin-bottom: 8px;
           
 </style>
