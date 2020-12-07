@@ -6,7 +6,7 @@ import About from '@/views/About';
 import Product from '@/views/Product';
 import News from '@/views/News';
 import Partner from '@/views/Partner';
-import Equipment from '@/views/Equipment';
+import ShopList from '@/views/ShopList';
 import Contact from '@/views/Contact';
 
 Vue.use(VueRouter);
@@ -47,9 +47,9 @@ const routes = [
     meta: {showBottomTabBar: true}
   },
   {
-    path: "/equipment",
-    name: "Equipment",
-    component: Equipment,
+    path: "/shoplist",
+    name: "ShopList",
+    component: ShopList,
     meta: {showBottomTabBar: true}
   },
   {

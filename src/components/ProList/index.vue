@@ -57,7 +57,11 @@ export default {
             swiperOption: {
                 slidesPerView: 3,
                 spaceBetween: 8,
-                observer: true
+                observer: true,
+                navigation: {
+                  nextEl: '.indexpro .next',
+                  prevEl: '.indexpro .prev',
+              }
             }
         }
     },

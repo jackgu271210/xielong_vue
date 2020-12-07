@@ -14,7 +14,12 @@ import {
   Submenu,
   MenuItem,
   Tabs,
-  TabPane
+  TabPane,
+  Form,
+  FormItem,
+  Select,
+  Option
+
 } from 'element-ui';
 
 Vue.use(Drawer)
@@ -23,6 +28,29 @@ Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Select)
+Vue.use(Option)
+
+//配置高德地图api
+import VueAMap from 'vue-amap'
+Vue.use(VueAMap);
+VueAMap.initAMapApiLoader({
+  key: '9a1277e55bfe1abecb8c22951c295473',
+  //插件
+  plugin: [
+    'AMap.Autocomplete', 
+    'AMap.PlaceSearch', 
+    'AMap.Scale', 
+    'AMap.OverView', 
+    'AMap.ToolBar', 
+    'AMap.MapType', 
+    'AMap.PolyEditor', 
+    'AMap.CircleEditor'],
+  // 默认高德 sdk 版本为 1.4.4
+  v: '1.4.4'
+});
 
 // 配置 vue-awesome-swiper
 import VueAwesomeSwiper from 'vue-awesome-swiper'

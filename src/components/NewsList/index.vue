@@ -53,6 +53,8 @@ export default {
       height 120px
       .pic
         width 40%
+        img
+          height 100%
       .content
         display flex
         justify-content center
