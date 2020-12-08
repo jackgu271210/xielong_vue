@@ -72,7 +72,7 @@
         </el-submenu>
         <el-menu-item index="5">
           <template slot="title">
-            <span>生产设备</span>
+            <span>门店信息</span>
           </template>
         </el-menu-item>
         <el-menu-item index="6">
