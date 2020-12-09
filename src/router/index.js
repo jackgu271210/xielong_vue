@@ -26,7 +26,15 @@ const routes = [
     path: "/about",
     name: "About",
     component: About,
-    meta: {showBottomTabBar: true}
+    meta: {showBottomTabBar: true},
+    children:[
+      {
+        path: "/home",
+        name: "Home",
+        component: Home,
+        meta: {showBottomTabBar: true}
+      },
+    ]
   },
   {
     path: "/product",

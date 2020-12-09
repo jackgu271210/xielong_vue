@@ -21,22 +21,19 @@
       :withHeader="false"
     >
       <el-menu
-        default-active="2"
+        :default-active="this.$route.path"
+        router
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
       >
-        <el-menu-item index="1">
-          <template slot="title">
+        <el-menu-item index="/home">
             <span>首页</span>
-          </template>
         </el-menu-item>
-        <el-menu-item index="2">
-          <template slot="title">
+        <el-menu-item index="/about">
             <span>关于我们</span>
-          </template>
         </el-menu-item>
-        <el-submenu index="3">
+        <el-submenu index="/product">
           <template slot="title">
             <span>产品世界</span>
           </template>
@@ -59,7 +56,7 @@
             <span slot="title">TPU热熔单丝</span>
           </el-menu-item>
         </el-submenu>
-        <el-submenu index="4">
+        <el-submenu index="/news">
           <template slot="title">
             <span>新闻资讯</span>
           </template>
@@ -70,20 +67,14 @@
             <span slot="title">行业新闻</span>
           </el-menu-item>
         </el-submenu>
-        <el-menu-item index="5">
-          <template slot="title">
+        <el-menu-item index="/shoplist">
             <span>门店信息</span>
-          </template>
         </el-menu-item>
-        <el-menu-item index="6">
-          <template slot="title">
+        <el-menu-item index="/partner">
             <span>合作伙伴</span>
-          </template>
         </el-menu-item>
-        <el-menu-item index="7">
-          <template slot="title">
+        <el-menu-item index="/contact">
             <span>联系我们</span>
-          </template>
         </el-menu-item>
       </el-menu>
     </el-drawer>
@@ -95,18 +86,25 @@ export default {
   name: "CommonHeader",
   data() {
     return {
+      activeIndex: '1',
       isActive: false,
       drawer: false,
       direction: "ttb",
-    };
+    }
+  },
+  watch: {
+    '$route':'menuSwitch'
   },
   methods: {
     menuSwitch() {
       this.isActive = !this.isActive;
       this.drawer = !this.drawer;
+    },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>

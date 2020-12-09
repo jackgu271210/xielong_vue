@@ -141,3 +141,6 @@ img {
 .button .prev, .button .more {
   margin-right:10px ;
 }
+div:focus {
+  outline: none;
+  }

@@ -1,9 +1,27 @@
 <template>
   <div class="about">
-    <div class="banner ban_gy">
+    <div class="inner_banner ban_gy">
       <div class="banner_wrap">
-        <h3>关于我们</h3>
-        <span>ABOUT US</span>
+        <div class="banner_txt">
+          <h3>关于我们</h3>
+          <span>ABOUT US</span>
+        </div>
+        <div class="banner_nav">
+          <ul>
+            <li>
+              <a href="javascript:;">关于我们</a>
+            </li>
+            <li>
+              <a href="javascript:;">发展历程</a>
+            </li>
+            <li>
+              <a href="javascript:;">荣誉资质</a>
+            </li>
+            <li>
+              <a href="javascript:;">企业文化</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="section subabout">
@@ -65,6 +83,23 @@
         </div>
       </div>
     </div>
+    <div class="section subhonor">
+      <div class="container">
+        <div class="title">
+          <h3>荣誉资质</h3>
+        </div>
+        <div class="content">
+          <swiper class="swiper" :options="swiperOptionHonor">
+            <swiper-slide
+              v-for="item in honorPic"
+              :key="item.index"
+            >
+              <img :src="item">
+            </swiper-slide>
+          </swiper>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -86,6 +121,14 @@ export default {
         '韩国男星浴室自杀',
         '农名工跳楼索要工资',
       ],
+      honorPic: [
+        'http://www.xlfibre.com/UploadFiles/201832615194736119.jpg',
+        'http://www.xlfibre.com/UploadFiles/201832615182320453.jpg',
+        'http://www.xlfibre.com/UploadFiles/201832615192321777.jpg',
+        'http://www.xlfibre.com/UploadFiles/20183261520970655.jpg',
+        'http://www.xlfibre.com/UploadFiles/201832615202772451.jpg',
+        'http://www.xlfibre.com/UploadFiles/2018329920589084.jpg'
+      ],
        swiperOptionTop: {
           loop: true,
           loopedSlides: 3, // looped slides should be the same
@@ -103,6 +146,13 @@ export default {
           loop: true,
           loopedSlides: 3, // looped slides should be the same
           spaceBetween: 0
+        },
+        swiperOptionHonor: {
+          slidesPerView: 3,
+          spaceBetween: 8,
+          autoplay: true,
+          loop: true,
+          loopFillGroupWithBlank: true
         }
     }
   },
@@ -119,6 +169,8 @@ export default {
 
 <style lang="stylus" scoped>
 .about
+  .inner_banner
+    position relative
   .ban_gy
     background-image url('http://www.seacorubber.com/images/ban_gy.jpg')
   .subabout
@@ -138,21 +190,26 @@ export default {
         border-top 1px solid #ddd
         bottom 1em
         margin-bottom 5px
-      .box
-        position relative
-        line-height 4
-        text-align center
-        &:before
-          content ""
-          position absolute
-          width 11px
-          height 11px
-          border-radius 50%
-          background-color #ddd
-          bottom 0
-          left 0
-          right 0
-          margin 0 auto
+      .swiper-slide
+        .box
+          position relative
+          line-height 4
+          text-align center
+          &:before
+            content ""
+            position absolute
+            width 11px
+            height 11px
+            border-radius 50%
+            background-color #ddd
+            bottom 0
+            left 0
+            right 0
+            margin 0 auto
+      .swiper-slide-active
+        .box
+          &:before
+              background-color #027de5
       .tab_btn
         .btn_item
           position absolute
@@ -168,7 +225,7 @@ export default {
             height 100%
             line-height 20px
             text-align center
-            font-size 6px
+            font-size 18px
             color #666
           .reverse
             transform rotate(180deg)
@@ -178,6 +235,14 @@ export default {
           right 0
     .tab_con
       text-align center
+  .subhonor
+    .swiper-slide
+      height 80px
+      padding 6px
+      border 1px solid #ddd
+      img
+        width 100%
+        height 100%
 
 
 </style>
