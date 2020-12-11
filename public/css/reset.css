@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
+  font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1;
 }
@@ -141,6 +142,36 @@ img {
 .button .prev, .button .more {
   margin-right:10px ;
 }
+.inner_ti h2 {
+  position: relative;
+  font-size: 22px;
+}
+.inner_ti h2:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 58px;
+  height: 2px;
+  background-color: #007dbe;
+}
+.inner_ti h2:after {
+  content: '';
+  display: block;
+  width: 152px;
+  height: 1px;
+  background-color: #ddd;
+  margin: 18px auto 0;
+}
+.inner_ti span {
+  display: block;
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 10px;
+  color: #595656;
+}
 div:focus {
   outline: none;
-  }
+}

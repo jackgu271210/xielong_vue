@@ -22,7 +22,6 @@ export default {
     .footer
         color #666
         text-align center
-        padding-bottom 60px
         .footer_cont
             dd
                 margin-bottom 10px

@@ -3,166 +3,62 @@
     <div class="inner_banner ban_gy">
       <div class="banner_wrap">
         <div class="banner_txt">
-          <h3>关于我们</h3>
+          <h2>关于我们</h2>
           <span>ABOUT US</span>
         </div>
         <div class="banner_nav">
-          <ul>
-            <li>
-              <a href="javascript:;">关于我们</a>
-            </li>
-            <li>
-              <a href="javascript:;">发展历程</a>
-            </li>
-            <li>
-              <a href="javascript:;">荣誉资质</a>
-            </li>
-            <li>
-              <a href="javascript:;">企业文化</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="section subabout">
-      <div class="container">
-        <div class="title">
-          <h3>关于我们</h3>
-        </div>
-        <div class="pic">
-          <img src="http://www.seacorubber.com/images/about_pic.jpg" alt="" />
-        </div>
-        <div class="txt">
-          <p>
-            无锡西海科技有限公司是一家专业从事橡胶密封件研发、生产和销售的企业。公司拥有先进的炼胶、硫化、加工中心、橡胶测试、注塑等设备，生产工艺严密，确保产品质量超越客户需求。目前主要生产用于家用电器、高端电子、运动器材、汽车零部件、医疗用品、机械五金等领域的橡胶密封件。可根据客户要求设计出各种性能的产品，如：高耐磨、高弹性、耐热、耐寒、耐燃、耐油、防震、耐酸碱、绝缘、导电等橡胶密封件。
-          </p>
-          <p>
-            公司本着“诚信、务实、专业、合作、共赢”的经营理念，专注每一个产品的设计制造，不断提高产品性能与品质，以“顾客所需，我们所想；品牌至上，商誉是金”为宗旨。在成长过程中，竭诚与你携手共创繁荣。我们将以优越的品质与热忱的服务回报您给我们的厚爱。
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section subpath">
-      <div class="container">
-        <div class="title">
-          <h3>发展历程</h3>
-        </div>
-        <div class="tab">
-          <div class="tab_bar">
-             <!-- swiper1 -->
-            <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
-              <swiper-slide 
-                class="slide-1" 
-                v-for="item in time"
-                :key="item.index"
+          <div class="container">
+            <ul>
+              <li
+                v-for="idx in aboutItem"
+                :key="idx.index"
+                :class="{active:activeName == idx.title}"
+                @click="changeItem(idx)" 
               >
-                <div class="box">{{item}}</div>
-              </swiper-slide>
-            </swiper>
-            <div class="tab_btn">
-              <div class="prev btn_item">
-                <i class="iconfont">&#xe600;</i>
-              </div>
-              <div class="next btn_item">
-                <i class="iconfont reverse">&#xe600;</i>
-              </div>
-            </div>
-          </div>
-          <div class="tab_con">
-            <!-- swiper2 Thumbs -->
-            <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-              <swiper-slide 
-                class="slide-1"
-                v-for="item in events"
-                :key="item.index"
-              >
-                <div class="box">{{item}}</div>
-              </swiper-slide>
-            </swiper>
+                {{idx.title}}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
+      <!-- <div class="ban_cover"></div> -->
     </div>
-    <div class="section subhonor">
-      <div class="container">
-        <div class="title">
-          <h3>荣誉资质</h3>
-        </div>
-        <div class="content">
-          <swiper class="swiper" :options="swiperOptionHonor">
-            <swiper-slide
-              v-for="item in honorPic"
-              :key="item.index"
-            >
-              <img :src="item">
-            </swiper-slide>
-          </swiper>
-        </div>
-      </div>
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
+  name: 'About',
   data() {
     return {
-      time:[
-        '2010',
-        '2012',
-        '2015',
-        '2017',
-        '2018'
-      ],
-      events: [
-        '神州五号发射成功',
-        '美国攻打伊拉克',
-        '意大利出口值连续增长',
-        '韩国男星浴室自杀',
-        '农名工跳楼索要工资',
-      ],
-      honorPic: [
-        'http://www.xlfibre.com/UploadFiles/201832615194736119.jpg',
-        'http://www.xlfibre.com/UploadFiles/201832615182320453.jpg',
-        'http://www.xlfibre.com/UploadFiles/201832615192321777.jpg',
-        'http://www.xlfibre.com/UploadFiles/20183261520970655.jpg',
-        'http://www.xlfibre.com/UploadFiles/201832615202772451.jpg',
-        'http://www.xlfibre.com/UploadFiles/2018329920589084.jpg'
-      ],
-       swiperOptionTop: {
-          loop: true,
-          loopedSlides: 3, // looped slides should be the same
-          spaceBetween: 0,
-          slidesPerView: 3,
-          touchRatio: 0.2,
-          slideToClickedSlide: true,
-          centeredSlides: true,
-          navigation: {
-            nextEl: '.prev',
-            prevEl: '.next'
-          }
+      activeName: '关于我们',
+      aboutItem: [
+        {
+          title:'关于我们',
+          url:'subabout'
         },
-        swiperOptionThumbs: {
-          loop: true,
-          loopedSlides: 3, // looped slides should be the same
-          spaceBetween: 0
+        {
+          title:'企业文化',
+          url:'subculture'
         },
-        swiperOptionHonor: {
-          slidesPerView: 3,
-          spaceBetween: 8,
-          autoplay: true,
-          loop: true,
-          loopFillGroupWithBlank: true
+        {
+          title:'荣誉资质',
+          url:'subhonor'
+        },
+        {
+          title:'发展历程',
+          url:'subpath'
         }
+      ]
     }
   },
-  mounted() {
-    this.$nextTick(() => {
-      const swiperTop = this.$refs.swiperTop.$swiper
-      const swiperThumbs = this.$refs.swiperThumbs.$swiper
-      swiperTop.controller.control = swiperThumbs
-      swiperThumbs.controller.control = swiperTop
-    })
+  methods: {
+    changeItem(idx) {
+      this.activeName = idx.title
+      console.log(idx.url)
+      this.$router.push({path: '/about/'+idx.url})
+    }
   }
 };
 </script>
@@ -171,78 +67,63 @@ export default {
 .about
   .inner_banner
     position relative
-  .ban_gy
-    background-image url('http://www.seacorubber.com/images/ban_gy.jpg')
-  .subabout
-    .pic
-      margin-bottom 20px
-  .subpath
-    padding-bottom 20px
-    background-color #f5f5f5
-    .tab_bar
-      position relative
-      padding 0 40px 13px 40px
-      &:before
-        content ""
-        position absolute
-        left 40px
-        right 40px
-        border-top 1px solid #ddd
-        bottom 1em
-        margin-bottom 5px
-      .swiper-slide
-        .box
-          position relative
-          line-height 4
-          text-align center
-          &:before
-            content ""
-            position absolute
-            width 11px
-            height 11px
-            border-radius 50%
-            background-color #ddd
-            bottom 0
-            left 0
-            right 0
-            margin 0 auto
-      .swiper-slide-active
-        .box
-          &:before
-              background-color #027de5
-      .tab_btn
-        .btn_item
-          position absolute
-          top 20px
+    padding-bottom 60%
+    background-size cover
+    .ban_cover
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+      background-color rgba(0,0,0,.5)
+      z-index 1
+    .banner_wrap
+      display flex
+      justify-content center
+      align-items center
+      position absolute 
+      left 0
+      right 0
+      top 0
+      bottom 0
+      z-index 2
+      .banner_txt
+        width 40%
+        text-align center
+        color #fff
+        h2
+          font-size 20px
+          color #fff
+          margin-bottom 10px
+        span 
+          font-size 16px
+      .banner_nav
+        position absolute 
+        left 0
+        right 0
+        bottom 0
+        z-index 3
+        ul
+          display -webkit-box
           display flex
-          justify-content center
+          -webkit-box-align center;
           align-items center
-          width 20px
-          height 20px
-          .iconfont
-            display block
-            width 100%
-            height 100%
-            line-height 20px
+          li
+            border-right 1px solid #fff
+            flex-grow 1
+            background-color rgb(0 125 190)
+            color #fff
+            height 50px
+            line-height 50px
+            font-size 14px
             text-align center
-            font-size 18px
-            color #666
-          .reverse
-            transform rotate(180deg)
-        .prev
-          left 0
-        .next
-          right 0
-    .tab_con
-      text-align center
-  .subhonor
-    .swiper-slide
-      height 80px
-      padding 6px
-      border 1px solid #ddd
-      img
-        width 100%
-        height 100%
+            cursor pointer
+            &:last-child
+              border-right none
+          .active
+            color rgb(0 125 190)
+            background-color #fff
 
-
+  .ban_gy
+    background-image url('http://www.xlgxhx.com/images/ban_gy.jpg')
 </style>

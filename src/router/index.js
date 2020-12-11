@@ -2,7 +2,13 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Home from '@/views/Home/index.vue';
+
 import About from '@/views/About';
+import SubAbout from '@/views/About/Children/SubAbout';
+import SubCulture from '@/views/About/Children/SubCulture';
+import SubHonor from '@/views/About/Children/SubHonor';
+import SubPath from '@/views/About/Children/SubPath';
+
 import Product from '@/views/Product';
 import News from '@/views/News';
 import Partner from '@/views/Partner';
@@ -29,11 +35,29 @@ const routes = [
     meta: {showBottomTabBar: true},
     children:[
       {
-        path: "/home",
-        name: "Home",
-        component: Home,
+        path: "subabout",
+        name: "SubAbout",
+        component: SubAbout,
         meta: {showBottomTabBar: true}
       },
+      {
+        path: "subculture",
+        name: "SubCulture",
+        component: SubCulture,
+        meta: {showBottomTabBar: true}
+      },
+      {
+        path: "subhonor",
+        name: "SubHonor",
+        component: SubHonor,
+        meta: {showBottomTabBar: true}
+      },
+      {
+        path: "subpath",
+        name: "SubPath",
+        component: SubPath,
+        meta: {showBottomTabBar: true}
+      }
     ]
   },
   {

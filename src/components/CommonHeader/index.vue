@@ -17,22 +17,33 @@
       :visible.sync="drawer"
       :direction="direction"
       :show-close="false"
-      :before-close="handleClose"
       :withHeader="false"
     >
       <el-menu
         :default-active="this.$route.path"
         router
         class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
       >
         <el-menu-item index="/home">
             <span>首页</span>
         </el-menu-item>
-        <el-menu-item index="/about">
-            <span>关于我们</span>
-        </el-menu-item>
+        <el-submenu index="/about">
+          <template slot="title">
+            <span>走进协龙</span>
+          </template>
+          <el-menu-item index="about/subabout">
+            <span slot="title">企业简介</span>
+          </el-menu-item>
+          <el-menu-item index="about/subculture">
+            <span slot="title">企业文化</span>
+          </el-menu-item>
+          <el-menu-item index="about/subhonor">
+            <span slot="title">荣誉资质</span>
+          </el-menu-item>
+          <el-menu-item index="about/subpath">
+            <span slot="title">发展历程</span>
+          </el-menu-item>
+        </el-submenu>
         <el-submenu index="/product">
           <template slot="title">
             <span>产品世界</span>
@@ -70,9 +81,6 @@
         <el-menu-item index="/shoplist">
             <span>门店信息</span>
         </el-menu-item>
-        <el-menu-item index="/partner">
-            <span>合作伙伴</span>
-        </el-menu-item>
         <el-menu-item index="/contact">
             <span>联系我们</span>
         </el-menu-item>
@@ -92,9 +100,6 @@ export default {
       direction: "ttb",
     }
   },
-  watch: {
-    '$route':'menuSwitch'
-  },
   methods: {
     menuSwitch() {
       this.isActive = !this.isActive;
@@ -109,61 +114,66 @@ export default {
 
 <style lang="stylus" scoped>
 ::v-deep .ttb 
-  height: 100% !important;
+  height 100% !important
 .common_header
-  min-height: 60px;
+  min-height 60px
   .header
-    width: 100%;
-    height: 60px;
-    background-color: #fff;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 9999;
-    padding: 0 20px;
-    box-sizing: border-box
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    width 100%
+    height 60px
+    background-color #fff
+    position fixed
+    left 0
+    top 0
+    z-index 9999
+    padding 0 20px
+    box-sizing border-box
+    display flex
+    justify-content space-between
+    align-items center
+    box-shadow 0 0 5px rgba(0,0,0,0.1)
     .logo
-      width: 50%;
+      width 50%
       img 
-        width: 100%;
+        width 100%
     .menu
-      width: 20px;
-      height: 20px;
-      position: relative;
+      width 20px
+      height 20px
+      position relative
       span
-        position: absolute;
-        left: 0;
-        width: 20px;
-        height: 2px;
-        background-color: #333;
-      span:nth-child(2)
-        margin-top: 8px;
-      span:nth-child(3)
-        margin-top: 16px;
+        position absolute
+        left 0
+        width 20px
+        height 2px
+        background-color #333
+        &:nth-child(2)
+          margin-top 8px
+        &:nth-child(3)
+          margin-top 16px
     .active
-      span:nth-child(1)
-        margin-top: 9px;
-        transform: rotate(135deg);
-      span:nth-child(2)
-        opacity: 0;
-      span:nth-child(3)
-        margin-top: 9px;
-        transform: rotate(-135deg);
+      span
+        &:nth-child(1)
+          margin-top 9px
+          transform rotate(135deg)
+        &:nth-child(2)
+          opacity 0
+        &:nth-child(3)
+          margin-top 9px
+          transform rotate(-135deg)
   .el-drawer__wrapper
-    position: fixed;
-    top: 60px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    margin: 0;
-    .el-menu-item
-      font-size: 16px;
-    .el-submenu
-      ::v-deep .el-submenu__title
-        font-size: 16px;
+    position fixed
+    top 60px
+    right 0
+    bottom 0
+    left 0
+    overflow hidden
+    margin 0
+    li
+      border-bottom 1px solid #ddd
+      &:last-child
+        border-bottom none
+      .el-menu-item
+        font-size 16px
+      .el-submenu
+        v-deep .el-submenu__title
+          font-size 16px
 </style>
