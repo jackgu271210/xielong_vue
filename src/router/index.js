@@ -11,7 +11,6 @@ import SubPath from '@/views/About/Children/SubPath';
 
 import Product from '@/views/Product';
 import News from '@/views/News';
-import Partner from '@/views/Partner';
 import ShopList from '@/views/ShopList';
 import Contact from '@/views/Contact';
 
@@ -70,12 +69,6 @@ const routes = [
     path: "/news",
     name: "News",
     component: News,
-    meta: {showBottomTabBar: true}
-  },
-  {
-    path: "/partner",
-    name: "Partner",
-    component: Partner,
     meta: {showBottomTabBar: true}
   },
   {

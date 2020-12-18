@@ -57,6 +57,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
 
+import './mock'
+
 Vue.config.productionTip = false;
 
 new Vue({

@@ -7,15 +7,18 @@
       </div>
       <div class="content">
         <ul>
-          <li>
+          <li 
+            v-for="item in culList"
+            :key="item.index"
+          >
             <div class="cul_item">
               <div class="item_l">
-                <img src="http://www.xlgxhx.com/images/cul_02.jpg" alt="">
+                <img :src="item.imgUrl">
               </div>
               <div class="item_r">
-                <h4>华立宗旨</h4>
-                <h5>增进社会福祉 实现人生价值</h5>
-                <p>Holley’s Purposes——To increase the social welfare and realize the life value</p>
+                <h4>{{item.bigTitle}}</h4>
+                <h5>{{item.smTitle}}</h5>
+                <p>{{item.desc}}</p>
               </div>
             </div>
           </li>
@@ -32,7 +35,19 @@ export default {
       return {
         culList:[
           {
+            imgUrl:'http://www.xlgxhx.com/images/cul_01.jpg',
+            bigTitle:'华立宗旨',
+            smTitle:'增进社会福祉 实现人生价值',
+            desc:'Holley’s Purposes——To increase the social welfare and realize the life value'
+          },
+          {
             imgUrl:'http://www.xlgxhx.com/images/cul_02.jpg',
+            bigTitle:'华立宗旨',
+            smTitle:'增进社会福祉 实现人生价值',
+            desc:'Holley’s Purposes——To increase the social welfare and realize the life value'
+          },
+          {
+            imgUrl:'http://www.xlgxhx.com/images/cul_03.jpg',
             bigTitle:'华立宗旨',
             smTitle:'增进社会福祉 实现人生价值',
             desc:'Holley’s Purposes——To increase the social welfare and realize the life value'

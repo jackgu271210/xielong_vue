@@ -1,0 +1,1 @@
+export const NEWS_DATA = 'news_data' //新闻数据

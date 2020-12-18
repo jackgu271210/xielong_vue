@@ -175,3 +175,33 @@ img {
 div:focus {
   outline: none;
 }
+
+.inner_ban {
+  position: relative;
+  padding-bottom: 60%;
+  background-size: cover;
+}
+.inner_ban .banner_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.banner_wrap .banner_txt {
+  width: 40%;
+  text-align: center;
+  color: #fff;
+}
+.banner_wrap .banner_txt h2 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.banner_wrap .banner_txt span {
+  font-size: 16px;
+}

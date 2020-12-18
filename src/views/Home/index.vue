@@ -114,7 +114,7 @@ export default {
           ]
         },
         {
-          "title": "电脑",
+          "title": "电脑配件",
           "list": [
             {
               "imgUrl":"http://www.seacorubber.com/UploadFiles/202011231622632392.jpg",

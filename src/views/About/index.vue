@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div class="inner_banner ban_gy">
+    <div class="inner_ban ban_gy">
       <div class="banner_wrap">
         <div class="banner_txt">
           <h2>关于我们</h2>
@@ -65,64 +65,50 @@ export default {
 
 <style lang="stylus" scoped>
 .about
-  .inner_banner
-    position relative
-    padding-bottom 60%
-    background-size cover
-    .ban_cover
-      position absolute
-      left 0
-      right 0
-      top 0
-      bottom 0
-      background-color rgba(0,0,0,.5)
-      z-index 1
-    .banner_wrap
-      display flex
-      justify-content center
-      align-items center
+  .ban_cover
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+    background-color rgba(0,0,0,.5)
+    z-index 1
+  .banner_wrap
+    display flex
+    justify-content center
+    align-items center
+    position absolute 
+    left 0
+    right 0
+    top 0
+    bottom 0
+    z-index 2
+    .banner_nav
       position absolute 
       left 0
       right 0
-      top 0
       bottom 0
-      z-index 2
-      .banner_txt
-        width 40%
-        text-align center
-        color #fff
-        h2
-          font-size 20px
+      z-index 3
+      ul
+        display -webkit-box
+        display flex
+        -webkit-box-align center;
+        align-items center
+        li
+          border-right 1px solid #fff
+          flex-grow 1
+          background-color rgb(0 125 190)
           color #fff
-          margin-bottom 10px
-        span 
-          font-size 16px
-      .banner_nav
-        position absolute 
-        left 0
-        right 0
-        bottom 0
-        z-index 3
-        ul
-          display -webkit-box
-          display flex
-          -webkit-box-align center;
-          align-items center
-          li
-            border-right 1px solid #fff
-            flex-grow 1
-            background-color rgb(0 125 190)
-            color #fff
-            height 50px
-            line-height 50px
-            font-size 14px
-            text-align center
-            cursor pointer
-            &:last-child
-              border-right none
-          .active
-            color rgb(0 125 190)
-            background-color #fff
+          height 50px
+          line-height 50px
+          font-size 14px
+          text-align center
+          cursor pointer
+          &:last-child
+            border-right none
+        .active
+          color rgb(0 125 190)
+          background-color #fff
 
   .ban_gy
     background-image url('http://www.xlgxhx.com/images/ban_gy.jpg')

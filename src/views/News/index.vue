@@ -6,7 +6,10 @@
 
 <script>
 export default {
-
+  name: 'News',
+  mounted() {
+    this.$store.dispatch('getNewsData')
+  }
 }
 </script>
 
