@@ -185,11 +185,11 @@ export default {
         },
         {
           position: [121.5273286, 31.31515045],
-        },
-      ],
-    };
-  },
-};
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>

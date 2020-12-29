@@ -10,6 +10,7 @@ import SubHonor from '@/views/About/Children/SubHonor';
 import SubPath from '@/views/About/Children/SubPath';
 
 import Product from '@/views/Product';
+import ProductDetail from '@/views/ProductDetail'
 import News from '@/views/News';
 import ShopList from '@/views/ShopList';
 import Contact from '@/views/Contact';
@@ -64,6 +65,11 @@ const routes = [
     name: "Product",
     component: Product,
     meta: {showBottomTabBar: true}
+  },
+  {
+    path: "/productdetail/:id",
+    name: "ProductDetail",
+    component: ProductDetail
   },
   {
     path: "/news",

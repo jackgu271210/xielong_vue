@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import './mock/index'
+
 //配置字体图标
 import "@/common/css/style.css";
 
@@ -18,7 +20,9 @@ import {
   Form,
   FormItem,
   Select,
-  Option
+  Option,
+  Input,
+  Button
 
 } from 'element-ui';
 
@@ -32,6 +36,8 @@ Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Input)
+Vue.use(Button)
 
 //配置高德地图api
 import VueAMap from 'vue-amap'
@@ -57,7 +63,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
 
-import './mock'
+ 
 
 Vue.config.productionTip = false;
 

@@ -1,12 +1,6 @@
 <template>
   <div class="product">
     <div class="inner_ban ban_cp">
-      <div class="banner_wrap">
-        <div class="banner_txt">
-           <h2>产品中心</h2>
-           <span>PRODUCT CENTER</span>
-        </div>
-      </div>
     </div>
     <div class="subpro section">
       <div class="container">
@@ -14,50 +8,73 @@
           <h2>协龙产品</h2>
           <span>XIELONG PRODUCT</span>
         </div>
-        <div class="tab">
-          <div class="tab_bar">
-            <ul>
-              <li href="javascript:;"
-                @click="tab(index)"
-                v-for="(item,index) in indexProList" :key="item.index"
-                :class="{active: index === curId}"
-                >
-                {{item.title}}
-              </li>
-            </ul>
-          </div>
-          <div class="tab_con">
-            <ul
-              v-show="index === curId"
-              v-for="(item, index) in indexProList" 
-              :key="item.index"
-            >
-              <li href="javascript:;"
-                v-for="subItem in item.list"
-                :key="subItem.index"
-                class="list"
+        <div class="subpro_list">
+          <ul>
+              <li
+                v-for="item in prodata"
+                :key="item.id"
+                @click="handleClick(item.id)"
               >
-                <div class="pic">
-                  <img :src="subItem.imgUrl" alt="" />
+                <div class="img">
+                  <img :src=item.imgUrl>
                 </div>
-                <span>{{ subItem.title }}</span>
+                <div class="txt">
+                  <h4>{{item.title}}</h4>
+                  <p>{{item.desc}}</p>
+                </div>
               </li>
             </ul>
-          </div>
-      </div>
+            <div class="weui-loadmore">
+              <i class="weui-loading"></i>
+              <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name:'Product',
-  props: ['indexProList']
+  mounted() {
+    this.$store.dispatch('reqProData')
+  },
+  computed: {
+    ...mapState(['prodata'])
+  },
+  methods: {
+    handleClick(id) {
+      this.$router.push(`/productdetail/${id}`)
+    }
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
   .ban_cp
     background-image url('http://www.xlgxhx.com/images/ban_cp.jpg')
+  .subpro_list
+    ul 
+      display flex
+      justify-content space-between
+      flex-wrap wrap
+      li 
+        width 48%
+        margin-bottom 10px
+        .txt
+          margin-top 10px
+          h4 
+            overflow hidden
+            text-overflow ellipsis 
+            white-space nowrap 
+            margin-bottom 10px
+          p 
+            line-height 20px
+            overflow hidden
+            text-overflow ellipsis 
+            display -webkit-box
+            -webkit-box-orient vertical
+            -webkit-line-clamp 2
 </style>
